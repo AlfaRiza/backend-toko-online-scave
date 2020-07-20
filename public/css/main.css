@@ -1,0 +1,271 @@
+nav .navbar-nav a {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+nav .navbar-nav a.active {
+  color: #d8b800 !important;
+}
+
+nav .navbar-nav a:hover {
+  color: #d8b800 !important;
+}
+
+.jumbotron .text-header {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 60px;
+}
+
+.jumbotron .lead {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #868476;
+}
+
+.btn:active {
+  -webkit-box-shadow: 0 0 0 0.2rem #d8b800;
+          box-shadow: 0 0 0 0.2rem #d8b800;
+}
+
+.produk figcaption h5 {
+  font-size: 16px;
+}
+
+.produk .text-header {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+}
+
+.produk .text-scn {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #868476;
+}
+
+.produk .produk-img {
+  position: relative;
+}
+
+.produk .produk-img a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.produk .produk-img:hover a {
+  opacity: 1;
+}
+
+.pesan .text-header {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+}
+
+.pesan .text-scn {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #868476;
+}
+
+.pesan .produk-img {
+  position: relative;
+}
+
+.pesan .produk-img a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.pesan .produk-img:hover a {
+  opacity: 1;
+}
+
+.pesan .media-body a:hover {
+  text-decoration: none;
+}
+
+.testimoni .text-header {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+}
+
+.testimoni .text-testi {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 36px;
+  color: #ffff;
+}
+
+.testimoni .text-scn {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #868476;
+}
+
+.testimoni .text-bio {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #868476;
+}
+
+footer .text-scn {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #868476;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+footer .text-scn:hover {
+  text-decoration: none !important;
+  color: #d8b800;
+}
+
+ol.breadcrumb a {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+ol.breadcrumb a:hover {
+  text-decoration: none;
+  color: #ffc107 !important;
+}
+
+.navigasi a.active {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #ffff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.navigasi a.active:hover {
+  background-color: #ffd900;
+  border-color: #ffd900;
+}
+
+.navigasi a {
+  background-color: #ffff;
+  border-color: #ffffff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.navigasi a:hover {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #ffff;
+}
+
+.navigasi .produk-img {
+  position: relative;
+}
+
+.navigasi .produk-img a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.navigasi .produk-img:hover a {
+  opacity: 1;
+}
+
+.cart .text-header {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+}
+
+.cart .text-subheader {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: #868476;
+}
+
+.cart .produk-img {
+  position: relative;
+}
+
+.cart .produk-img a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.cart .produk-img:hover a {
+  opacity: 1;
+}
+
+.cart .media-body a:hover {
+  text-decoration: none;
+}
+
+.serupa .produk-img {
+  position: relative;
+}
+
+.serupa .produk-img a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.serupa .produk-img:hover a {
+  opacity: 1;
+}
+
+.serupa .media-body a:hover {
+  text-decoration: none;
+}
+
+.serupa .text-scn {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #868476;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,257 @@
+// Navbar
+nav {
+  .navbar-nav {
+    a {
+      transition: all 0.5s ease-in-out;
+    }
+    a.active {
+      color: #d8b800 !important;
+    }
+    a:hover {
+      color: #d8b800 !important;
+      //   font-weight: 500;
+    }
+  }
+}
+// Jumbotron
+.jumbotron {
+  .text-header {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 60px;
+    // color: #d8b800;
+  }
+  .lead {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #868476;
+  }
+}
+.btn:active{
+  box-shadow: 0 0 0 0.2rem #d8b800;
+}
+//Produk
+.produk{
+  figcaption{
+    h5{
+      font-size: 16px;
+    }
+  }
+  .text-header{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+  }
+  .text-scn {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #868476;
+  }
+  .produk-img{
+    position: relative;
+  }
+  .produk-img a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .produk-img:hover a{
+    opacity: 1;
+  }
+}
+//Pesan
+.pesan{
+  .text-header{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+  }
+  .text-scn {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #868476;
+  }
+  .produk-img{
+    position: relative;
+  }
+  .produk-img a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 8px;
+    background-color: rgba(0,0,0,0.7);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .produk-img:hover a{
+    opacity: 1;
+  }
+  .media-body a:hover{
+    text-decoration: none;
+  }
+}
+//Testimoni
+.testimoni{
+  .text-header{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+  }
+  .text-testi{
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 36px;
+    color: #ffff;
+  }
+  .text-scn {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #868476;
+  }
+  .text-bio {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #868476;
+  }
+}
+
+//footer
+footer{
+  .text-scn{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #868476;
+    transition: all 0.5s;
+
+    &:hover{
+      text-decoration: none !important;
+      color: #d8b800;
+      
+    }
+  }
+}
+//breadchumbs
+ol.breadcrumb{
+  a{
+    transition: all 0.5s;
+  }
+  a:hover{
+    text-decoration: none;
+    color: #ffc107 !important;
+  }
+}
+//Navigasi
+.navigasi{
+   a.active{
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #ffff;
+    transition: all 0.3s;
+    
+    &:hover{
+      background-color: #ffd900;
+      border-color: #ffd900;
+    }
+   }
+   a{
+     background-color: #ffff;
+     border-color: #ffffff;
+     transition: all 0.3s;
+     &:hover{
+      background-color: #ffc107;
+      border-color: #ffc107;
+      color: #ffff;
+     }
+   }
+   .produk-img{
+    position: relative;
+  }
+  .produk-img a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 8px;
+    background-color: rgba(0,0,0,0.7);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .produk-img:hover a{
+    opacity: 1;
+  }
+}
+
+//cart
+.cart{
+  .text-header{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+  }
+  .text-subheader{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #868476;
+  }
+  .produk-img{
+    position: relative;
+  }
+  .produk-img a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 8px;
+    background-color: rgba(0,0,0,0.7);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .produk-img:hover a{
+    opacity: 1;
+  }
+  .media-body a:hover{
+    text-decoration: none;
+  }
+}
+// Serupa
+.serupa{
+  .produk-img{
+    position: relative;
+  }
+  .produk-img a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 8px;
+    background-color: rgba(0,0,0,0.7);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .produk-img:hover a{
+    opacity: 1;
+  }
+  .media-body a:hover{
+    text-decoration: none;
+  }
+  .text-scn {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #868476;
+  }
+}
