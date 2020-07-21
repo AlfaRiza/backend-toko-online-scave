@@ -23,7 +23,11 @@ Route::get('/produk/{id?}', 'UserController@produk')->name('produk');
 Route::get('/promo/{id?}', 'UserController@promo')->name('promo');
 
 Route::middleware(['auth','role:user'])->get('/cart', 'TransactionController@cart')->name('cart');
-Route::middleware(['auth','role:user'])->get('/profile', 'UserController@cart')->name('profile');
-Route::middleware(['auth','role:user'])->get('/success', 'UserController@success')->name('success');
+Route::middleware(['auth','role:user'])->get('/profile', 'UserController@profile')->name('profile');
+Route::middleware(['auth','role:user'])->post('/success', 'UserController@success')->name('success');
 
 Route::middleware(['auth','role:admin'])->get('/dashboard', 'AdminController@index')->name('dashboard');
+Route::middleware(['auth','role:admin'])->get('/category', 'CategoryController@index')->name('category');
+Route::middleware(['auth','role:admin'])->get('/product', 'ProductController@index')->name('product');
+Route::middleware(['auth','role:admin'])->get('/transaction', 'ProductController@index')->name('transaction');
+Route::middleware(['auth','role:admin'])->get('/setting', 'ProductController@index')->name('setting');
