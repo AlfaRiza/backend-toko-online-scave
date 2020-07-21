@@ -44,43 +44,44 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="text-white">
-                <td>1</td>
-                <td>
-                  <img src="{{ url('image/one.jpg') }}" width="50px" alt="">
+              <?php $jml = 0;
+                $total = 0;
+              ?>
+              {{-- {{ dd($cart->products) }} --}}
+              @forelse ($cart as $item)
+                  @foreach ($item->products as $produk)
+                  <tr class="text-white">
+                    <td>1</td>
+                    <td>
+                      <img src="{{ url('image/one.jpg') }}" width="50px" alt="">
+                    </td>
+                    <td>{{ $produk->name }}</td>
+                    <td>Rp. {{ number_format($produk->harga,2,',','.') }}</td>
+                    <form action="">
+                      <td><input type="number" value="1" name="jumlah" id="jumlah" min="1" max="10" value="1" style="width: 40px;"></td>
+                      <td>{{ 
+                      number_format($produk->harga * 1,2,',','.')
+                      }}
+                      
+                    </td>
+                      <td>
+                        <div class="d-flex justify-content-between">
+                          <a href=""><i class="fas fa-check text-warning"></i> </a>
+                    </form>
+                    <form action="">
+                      <a href=""><i class="fas fa-trash-alt text-danger"></i></a>
+                    </form>
+                </div>
                 </td>
-                <td>Kaos</td>
-                <td>Rp. 120.000,00</td>
-                <form action="">
-                  <td><input type="number" name="jumlah" id="jumlah" min="1" max="10" value="1" style="width: 40px;">
-                  </td>
-                  <td>Rp. 120.000,00</td>
-                  <td>
-                    <div class="d-flex justify-content-between">
-                      <a href=""><i class="fas fa-check text-warning"></i> </a>
-                </form>
-                <form action=""><a href=""><i class="fas fa-trash-alt text-danger"></i></a></form>
-        </div>
-        </td>
-        </tr>
-        <tr class="text-white">
-          <td>1</td>
-          <td>
-            <img src="{{ url('image/one.jpg') }}" width="50px" alt="">
-          </td>
-          <td>Kaos</td>
-          <td>Rp. 120.000,00</td>
-          <form action="">
-            <td><input type="number" name="jumlah" id="jumlah" min="1" max="10" value="1" style="width: 40px;"></td>
-            <td>Rp. 120.000,00</td>
-            <td>
-              <div class="d-flex justify-content-between">
-                <a href=""><i class="fas fa-check text-warning"></i> </a>
-          </form>
-          <form action=""><a href=""><i class="fas fa-trash-alt text-danger"></i></a></form>
-      </div>
-      </td>
-      </tr>
+                </tr>
+                  @endforeach
+              @empty
+                <div class="d-flex justify-content-center mx-auto">
+                  <img src="{{ url('image/seccess.png') }}" alt="">
+                  <h1 class="text-warning align-self-center">Maaf Produk Kosong</h1>
+                </div>
+              @endforelse
+        
       </tbody>
       </table>
     </div>
@@ -89,11 +90,13 @@
         <h5 class="card-header">Informasi</h5>
         <div class="d-flex justify-content-between px-4">
           <p>ID Transaksi</p>
-          <p>#121312</p>
+          @foreach ($cart as $item)
+            <p>#{{ $item->id }}</p>
+          @endforeach
         </div>
         <div class="d-flex justify-content-between px-4">
           <p>Total</p>
-          <p>$240.000,00</p>
+          <p>Rp. {{ number_format($total,2,',','.') }} </p>
         </div>
         <div class="d-flex justify-content-between px-4">
           <p>Bank Transfers</p>
@@ -115,25 +118,27 @@
     <div class="row cart">
       <div class="col-6">
         <h2 class="text-warning">Informasi Pribadi</h2>
-        <form action="" class="form">
-          <div class="form-group">
-            <label for="name" class="text-secondary">Name</label>
-            <input type="text" id="name" placeholder="Name" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="email" class="text-secondary">Email</label>
-            <input type="email" id="email" placeholder="youremail@gmail.com" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="no_telp" class="text-secondary">Nomor Telpon</label>
-            <input type="text" id="no_telp" placeholder="082xxxx" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1" class="text-secondary">Alamat</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-              placeholder="Your Address"></textarea>
-          </div>
-        </form>
+        @foreach ($cart as $user)
+            <form action="" class="form">
+              <div class="form-group">
+                <label for="name" class="text-secondary">Name</label>
+                <input type="text" id="name" placeholder="Name" value="{{ $user->user->name }}" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="email" class="text-secondary">Email</label>
+                <input type="email" id="email" value="{{ $user->user->email }}" placeholder="youremail@gmail.com" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="no_telp" class="text-secondary">Nomor Telpon</label>
+                <input type="text" id="no_telp" value="{{ $user->user->nomor_telpon }}" placeholder="082xxxx" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1" class="text-secondary">Alamat</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                  placeholder="Your Address">{{ $user->user->alamat }}</textarea>
+              </div>
+            </form>
+        @endforeach
       </div>
     </div>
     </div>

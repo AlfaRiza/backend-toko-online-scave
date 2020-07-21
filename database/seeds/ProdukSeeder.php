@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\Product;
+use Illuminate\Support\Str;
 class ProdukSeeder extends Seeder
 {
     /**
@@ -11,6 +12,13 @@ class ProdukSeeder extends Seeder
      */
     public function run()
     {
-        //
+
+                Product::create([
+                    'name' => Str::random(10),
+                    'description' => Str::random(80),
+                    'category_id' => 3,
+                    'harga' => 150000,
+                    'stock' => 20,
+                ]);
     }
 }

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Category;
+use App\Product;
 
 class UserController extends Controller
 {
@@ -13,7 +15,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('user.index');
+        // $category = Category::all();
+        $category_limit = Category::limit(3)->with(['product'])->get();
+        $produk_limit = Product::limit(4)->get();
+        return view('user.index', [ 'category_limit' => $category_limit, 'produk_limit' => $produk_limit]);
     }
     /**
      * Display a listing of the resource.
@@ -25,6 +30,8 @@ class UserController extends Controller
         // if (Auth::user()->id !== $id) {
         //     # code...
         // }
+        // $category = Category::all();
+
         return view('user.cart');
     }
 
@@ -36,6 +43,7 @@ class UserController extends Controller
      */
     public function about(Request $request)
     {
+        // $category = Category::all();
         return view('user.about');
     }
 
@@ -47,7 +55,10 @@ class UserController extends Controller
      */
     public function show()
     {
-        return view('user.detail');
+        // $category = Category::all();
+        $category_limit = Category::limit(3)->with(['product'])->get();
+
+        return view('user.detail', [ 'category_limit' => $category_limit]);
     }
 
     /**
@@ -58,6 +69,7 @@ class UserController extends Controller
      */
     public function faq()
     {
+        // $category = Category::all();
         return view('user.faq');
     }
 
@@ -70,6 +82,7 @@ class UserController extends Controller
      */
     public function success()
     {
+        
         return view('user.success');
     }
 
@@ -80,9 +93,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function produk()
+    public function produk($id = 1)
     {
-        return view('user.produk');
+        // $category = Category::all();
+        $produk = Product::where('category_id','=',$id)->get();
+        return view('user.produk', ['produk' => $produk]);
     }
 
     /**
@@ -92,8 +107,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function promo()
+    public function promo($id = 1)
     {
-        return view('user.produk');
+        // $category = Category::all();
+        $produk = Product::where('category_id','=',$id)->get();
+        return view('user.produk', ['produk' => $produk]);
     }
 }

@@ -19,21 +19,11 @@
         <div class="col-12 col-lg-3 kategori">
           <h5 class="text-white">Our Categories</h5>
           <ul class="list-unstyled">
+            @foreach ($category as $item)
             <li>
-              <a class="text-scn" href="">Kaos Modern</a>
+              <a class="text-scn" href="{{ route('produk',$item->id) }}">{{ $item->name }}</a>
             </li>
-            <li>
-              <a class="text-scn" href="">Kaos Klasik</a>
-            </li>
-            <li>
-              <a class="text-scn" href="">Kaos Pria</a>
-            </li>
-            <li>
-              <a class="text-scn" href="">Kaos Wanita</a>
-            </li>
-            <li>
-              <a class="text-scn" href="">Kaos Anak</a>
-            </li>
+            @endforeach
           </ul>
         </div>
 

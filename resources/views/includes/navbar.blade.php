@@ -10,30 +10,36 @@
       </button>
       <div class="collapse navbar-collapse d-lg-flex justify-content-center" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link active mr-3" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link mr-3" href="{{ route('produk') }}">Produk</a>
-          <a class="nav-item nav-link mr-3" href="{{ route('promo') }}">Promo</a>
-          <a class="nav-item nav-link mr-3" href="{{ route('about') }}">About Us</a>
-          <a class="nav-item nav-link mr-3" href="{{ route('faq') }}">FAQ</a>
+          <a class="nav-item nav-link {{ Request::url() == url('/') ? 'active' : '' }} mr-3" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link {{ Request::url() == url('produk') ? 'active' : '' }} mr-3" href="{{ route('produk') }}">Produk</a>
+          <a class="nav-item nav-link {{ Request::url() == url('promo') ? 'active' : '' }} mr-3" href="{{ route('promo') }}">Promo</a>
+          <a class="nav-item nav-link {{ Request::url() == url('about') ? 'active' : '' }} mr-3" href="{{ route('about') }}">About Us</a>
+          <a class="nav-item nav-link {{ Request::url() == url('faq') ? 'active' : '' }} mr-3" href="{{ route('faq') }}">FAQ</a>
           <a href="{{ route('cart') }}" class="d-lg-none btn rounded-pill px-lg-4 py-lg-2 mr-lg-2 text-warning"><i
               class="fas fa-fw fa-cart-plus"></i>
             Cart</a>
           @guest
           <a href="{{ route('login') }}" class="d-lg-none btn btn-outline-warning rounded-pill px-lg-4 py-lg-2">Login</a>    
           @else
-          <a href="{{ route('profile') }}" class="d-lg-none btn btn-outline-warning rounded-pill px-lg-4 py-lg-2">{{ Auth::user()->name }}</a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+            <button class="btn btn-outline-warning rounded-pill px-lg-4 py-lg-2">Logout</button>
+          </form>          
           @endguest
         </div>
       </div>
       <div class="d-none d-lg-flex justify-content-end">
-        <a href="cart.html" class="btn rounded-pill px-lg-4 py-lg-2 mr-lg-2 text-warning"><i
+        <a href="{{ route('cart') }}" class="btn rounded-pill px-lg-4 py-lg-2 mr-lg-2 text-warning"><i
             class="fas fa-fw fa-cart-plus"></i>
           Cart</a>
         @guest
             <a href="{{ route('login') }}" class="btn btn-outline-warning rounded-pill px-lg-4 py-lg-2">Login</a>
         @else
-        <a href="{{ route('profile') }}" class="btn btn-outline-warning rounded-pill px-lg-4 py-lg-2">{{ Auth::user()->name }}</a>
-        @endguest
+        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+          @csrf
+          <button class="btn btn-outline-warning rounded-pill px-lg-4 py-lg-2">Logout</button>
+        </form>       
+       @endguest
       </div>
 
     </nav>

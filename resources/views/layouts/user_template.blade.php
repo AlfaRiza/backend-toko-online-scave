@@ -9,9 +9,10 @@
   <link rel="stylesheet" href="{{ url('fontawesome-free/css/all.min.css') }}" />
   <link rel="stylesheet" href="{{ url('css/main.css') }}" />
   <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Poppins:wght@300;500;600&display=swap"
-    rel="stylesheet" />
+  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Poppins:wght@300;500;600&display=swap"
+  rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="{{ url('image/logo1.png') }}" type="image/x-icon">
 </head>
 
 <body>

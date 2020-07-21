@@ -78,227 +78,32 @@
         </div>
       </div>
       <div class="row">
+        @forelse ($produk_limit as $item)
         <div class="col-6 col-lg-3">
           <figure class="figure">
             <div class="produk-img">
               <img src="{{ url('image/one.jpg') }}" width="200px" class="figure-img img-fluid rounded" alt="Produk">
-              <a href="" class="d-flex justify-content-center">
+              <a href="{{ route('produk', $item->id) }}" class="d-flex justify-content-center">
                 <img src="{{ url('image/detail.png') }}" class="align-self-center" alt="">
               </a>
             </div>
             <figcaption class="figure-caption">
-              <h5 class="text-warning">Kaos Oblong</h5>
+              <h5 class="text-warning">{{ $item->name }}</h5>
             </figcaption>
-            <p class="text-white">Rp. 120.000,00 <sup class="text-danger"><strike>Rp.150.000,00</strike></sup></p>
+            <p class="text-white">Rp. {{ number_format($item->harga, 2, ',', '.') }} <sup class="text-danger"><strike>Rp.150.000,00</strike></sup></p>
           </figure>
         </div>
-        <div class="col-6 col-lg-3">
-          <figure class="figure">
-            <div class="produk-img">
-              <img src="{{ url('image/one.jpg') }}" width="200px" class="figure-img img-fluid rounded" alt="Produk">
-              <a href="" class="d-flex justify-content-center">
-                <img src="{{ url('image/detail.png') }}" class="align-self-center" alt="">
-              </a>
-            </div>
-            <figcaption class="figure-caption">
-              <h5 class="text-warning">Kaos Oblong</h5>
-            </figcaption>
-            <p class="text-white">Rp. 120.000,00 <sup class="text-danger"><strike>Rp.150.000,00</strike></sup></p>
-          </figure>
-        </div>
-        <div class="col-6 col-lg-3">
-          <figure class="figure">
-            <div class="produk-img">
-              <img src="{{ url('image/one.jpg') }}" width="200px" class="figure-img img-fluid rounded" alt="Produk">
-              <a href="" class="d-flex justify-content-center">
-                <img src="{{ url('image/detail.png') }}" class="align-self-center" alt="">
-              </a>
-            </div>
-            <figcaption class="figure-caption">
-              <h5 class="text-warning">Kaos Oblong</h5>
-            </figcaption>
-            <p class="text-white">Rp. 120.000,00 <sup class="text-danger"><strike>Rp.150.000,00</strike></sup></p>
-          </figure>
-        </div>
-        <div class="col-6 col-lg-3">
-          <figure class="figure">
-            <div class="produk-img">
-              <img src="{{ url('image/one.jpg') }}" width="200px" class="figure-img img-fluid rounded" alt="Produk">
-              <a href="" class="d-flex justify-content-center">
-                <img src="{{ url('image/detail.png') }}" class="align-self-center" alt="">
-              </a>
-            </div>
-            <figcaption class="figure-caption">
-              <h5 class="text-warning">Kaos Oblong</h5>
-            </figcaption>
-            <p class="text-white">Rp. 120.000,00 <sup class="text-danger"><strike>Rp.150.000,00</strike></sup></p>
-          </figure>
-        </div>
-        <div class="col-6 col-lg-3">
-          <figure class="figure">
-            <div class="produk-img">
-              <img src="{{ url('image/one.jpg') }}" width="200px" class="figure-img img-fluid rounded" alt="Produk">
-              <a href="" class="d-flex justify-content-center">
-                <img src="{{ url('image/detail.png') }}" class="align-self-center" alt="">
-              </a>
-            </div>
-            <figcaption class="figure-caption">
-              <h5 class="text-warning">Kaos Oblong</h5>
-            </figcaption>
-            <p class="text-white">Rp. 120.000,00 <sup class="text-danger"><strike>Rp.150.000,00</strike></sup></p>
-          </figure>
-        </div>
-        <div class="col-6 col-lg-3">
-          <figure class="figure">
-            <div class="produk-img">
-              <img src="{{ url('image/one.jpg') }}" width="200px" class="figure-img img-fluid rounded" alt="Produk">
-              <a href="" class="d-flex justify-content-center">
-                <img src="{{ url('image/detail.png') }}" class="align-self-center" alt="">
-              </a>
-            </div>
-            <figcaption class="figure-caption">
-              <h5 class="text-warning">Kaos Oblong</h5>
-            </figcaption>
-            <p class="text-white">Rp. 120.000,00 <sup class="text-danger"><strike>Rp.150.000,00</strike></sup></p>
-          </figure>
-        </div>
+        @empty
+            
+        @endforelse
+        
+        
       </div>
     </div>
   </section>
   <!-- End of Produk -->
   <!-- Cara Pesan -->
-  <section class="pesan" style="background: url('image/background1.jpg'); background-attachment: fixed;">
-    <div class="container py-5">
-      <div class="row">
-        <div class="col">
-          <h1 class="text-warning text-header">Categories</h1>
-          <p class="text-scn">Temukan kategori yang sesuai dengan anda</p>
-        </div>
-      </div>
-      <div class="row">
-        <!-- Kaos -->
-        <div class="col-12 col-lg-4">
-          <h3 class="text-warning my-3">Kaos</h3>
-          <div class="media">
-            <div class="produk-img">
-              <img src="{{ url('image/one.jpg') }}" width="75px" class="figure-img img-fluid rounded" alt="Produk">
-              <a href="" class="d-flex justify-content-center">
-                <img src="{{ url('image/detail.png') }}" class="align-self-center" alt="">
-              </a>
-            </div>
-            <div class="media-body ml-2">
-              <h5><a class="mt-0 text-warning" href="">Kaos Oblong</a></h5>
-              <p class="text-white">Rp. 120.000,00 <sup class="text-danger"><strike>Rp.150.000,00</strike></sup></p>
-            </div>
-          </div>
-          <div class="media">
-            <div class="produk-img">
-              <img src="{{ url('image/one.jpg') }}" width="75px" class="figure-img img-fluid rounded" alt="Produk">
-              <a href="" class="d-flex justify-content-center">
-                <img src="{{ url('image/detail.png') }}" class="align-self-center" alt="">
-              </a>
-            </div>
-            <div class="media-body ml-2">
-              <h5><a class="mt-0 text-warning" href="">Kaos Oblong</a></h5>
-              <p class="text-white">Rp. 120.000,00 <sup class="text-danger"><strike>Rp.150.000,00</strike></sup></p>
-            </div>
-          </div>
-          <div class="media">
-            <div class="produk-img">
-              <img src="{{ url('image/one.jpg') }}" width="75px" class="figure-img img-fluid rounded" alt="Produk">
-              <a href="" class="d-flex justify-content-center">
-                <img src="{{ url('image/detail.png') }}" class="align-self-center" alt="">
-              </a>
-            </div>
-            <div class="media-body ml-2">
-              <h5><a class="mt-0 text-warning" href="">Kaos Oblong</a></h5>
-              <p class="text-white">Rp. 120.000,00 <sup class="text-danger"><strike>Rp.150.000,00</strike></sup></p>
-            </div>
-          </div>
-        </div>
-        <!-- Jaket -->
-        <div class="col-12 col-lg-4">
-          <h3 class="text-warning my-3">Kaos</h3>
-          <div class="media">
-            <div class="produk-img">
-              <img src="{{ url('image/two.jpg') }}" width="75px" class="figure-img img-fluid rounded" alt="Produk">
-              <a href="" class="d-flex justify-content-center">
-                <img src="{{ url('image/detail.png') }}" class="align-self-center" alt="">
-              </a>
-            </div>
-            <div class="media-body ml-2">
-              <h5><a class="mt-0 text-warning" href="">Kaos Oblong</a></h5>
-              <p class="text-white">Rp. 120.000,00 <sup class="text-danger"><strike>Rp.150.000,00</strike></sup></p>
-            </div>
-          </div>
-          <div class="media">
-            <div class="produk-img">
-              <img src="{{ url('image/two.jpg') }}" width="75px" class="figure-img img-fluid rounded" alt="Produk">
-              <a href="" class="d-flex justify-content-center">
-                <img src="{{ url('image/detail.png') }}" class="align-self-center" alt="">
-              </a>
-            </div>
-            <div class="media-body ml-2">
-              <h5><a class="mt-0 text-warning" href="">Kaos Oblong</a></h5>
-              <p class="text-white">Rp. 120.000,00 <sup class="text-danger"><strike>Rp.150.000,00</strike></sup></p>
-            </div>
-          </div>
-          <div class="media">
-            <div class="produk-img">
-              <img src="{{ url('image/two.jpg') }}" width="75px" class="figure-img img-fluid rounded" alt="Produk">
-              <a href="" class="d-flex justify-content-center">
-                <img src="{{ url('image/detail.png') }}" class="align-self-center" alt="">
-              </a>
-            </div>
-            <div class="media-body ml-2">
-              <h5><a class="mt-0 text-warning" href="">Jaket Oblong</a></h5>
-              <p class="text-white">Rp. 120.000,00 <sup class="text-danger"><strike>Rp.150.000,00</strike></sup></p>
-            </div>
-          </div>
-        </div>
-        <!-- Hoodie -->
-        <div class="col-12 col-lg-4">
-          <h3 class="text-warning my-3">Kaos</h3>
-          <div class="media">
-            <div class="produk-img">
-              <img src="{{ url('image/tri.jpg') }}" width="75px" class="figure-img img-fluid rounded" alt="Produk">
-              <a href="" class="d-flex justify-content-center">
-                <img src="{{ url('image/detail.png') }}" class="align-self-center" alt="">
-              </a>
-            </div>
-            <div class="media-body ml-2">
-              <h5><a class="mt-0 text-warning" href="">Jaket Oblong</a></h5>
-              <p class="text-white">Rp. 120.000,00 <sup class="text-danger"><strike>Rp.150.000,00</strike></sup></p>
-            </div>
-          </div>
-          <div class="media">
-            <div class="produk-img">
-              <img src="{{ url('image/tri.jpg') }}" width="75px" class="figure-img img-fluid rounded" alt="Produk">
-              <a href="" class="d-flex justify-content-center">
-                <img src="{{ url('image/detail.png') }}" class="align-self-center" alt="">
-              </a>
-            </div>
-            <div class="media-body ml-2">
-              <h5><a class="mt-0 text-warning" href="">Hoodie Oblong</a></h5>
-              <p class="text-white">Rp. 120.000,00 <sup class="text-danger"><strike>Rp.150.000,00</strike></sup></p>
-            </div>
-          </div>
-          <div class="media">
-            <div class="produk-img">
-              <img src="{{ url('image/tri.jpg') }}" width="75px" class="figure-img img-fluid rounded" alt="Produk">
-              <a href="" class="d-flex justify-content-center">
-                <img src="{{ url('image/detail.png') }}" class="align-self-center" alt="">
-              </a>
-            </div>
-            <div class="media-body ml-2">
-              <h5><a class="mt-0 text-warning" href="">Hoodie Oblong</a></h5>
-              <p class="text-white">Rp. 120.000,00 <sup class="text-danger"><strike>Rp.150.000,00</strike></sup></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  @include('includes.category')
   <!-- End of Cara Pesan -->
   <!-- Testimoni -->
   <section class="testimoni" style="background: black;">

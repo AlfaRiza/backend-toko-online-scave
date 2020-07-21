@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Category;
+use Illuminate\Support\Str;
 
 class CategorySeeder extends Seeder
 {
@@ -11,6 +13,11 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        //
+        for ($i=0; $i < 5; $i++) { 
+            Category::create([
+                'name'  => Str::random(10),
+                'description' => Str::random(80),
+            ]);
+        }
     }
 }
