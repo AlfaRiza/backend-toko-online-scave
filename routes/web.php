@@ -27,7 +27,13 @@ Route::middleware(['auth','role:user'])->get('/profile', 'UserController@profile
 Route::middleware(['auth','role:user'])->post('/success', 'UserController@success')->name('success');
 
 Route::middleware(['auth','role:admin'])->get('/dashboard', 'AdminController@index')->name('dashboard');
+
 Route::middleware(['auth','role:admin'])->get('/category', 'CategoryController@index')->name('category');
+Route::middleware(['auth','role:admin'])->get('/category/edit', 'CategoryController@index')->name('category-edit');
+Route::middleware(['auth','role:admin'])->get('/category/create', 'CategoryController@create')->name('category-add');
+Route::middleware(['auth','role:admin'])->post('/category/create', 'CategoryController@store')->name('category-store');
+
+
 Route::middleware(['auth','role:admin'])->get('/product', 'ProductController@index')->name('product');
 Route::middleware(['auth','role:admin'])->get('/transaction', 'ProductController@index')->name('transaction');
 Route::middleware(['auth','role:admin'])->get('/setting', 'ProductController@index')->name('setting');
