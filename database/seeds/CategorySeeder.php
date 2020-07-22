@@ -16,6 +16,7 @@ class CategorySeeder extends Seeder
         for ($i=0; $i < 5; $i++) { 
             Category::create([
                 'name'  => Str::random(10),
+                'slug'  => Str::random(10),
                 'description' => Str::random(80),
             ]);
         }

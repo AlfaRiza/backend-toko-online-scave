@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Product;
 class ProductImage extends Model
 {
-    protected $guard = [];
+    protected $guarded = [];
 
     public function product(){
         return $this->belongsTo(Product::class, 'product_id','id');

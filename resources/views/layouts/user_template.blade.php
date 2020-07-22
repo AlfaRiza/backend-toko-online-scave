@@ -22,6 +22,8 @@
   @yield('content')
   <!-- Footer -->
   @include('includes.footer')
+
+  @stack('addon-script')
   <!-- End Of Footer -->
   <script src="{{ url('js/jquery-3.5.1.min.js') }}"></script>
   <!-- <script src="js/popper.js"></script> -->

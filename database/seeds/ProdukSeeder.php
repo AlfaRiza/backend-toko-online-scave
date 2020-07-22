@@ -15,6 +15,7 @@ class ProdukSeeder extends Seeder
 
                 Product::create([
                     'name' => Str::random(10),
+                    'slug' => Str::random(10),
                     'description' => Str::random(80),
                     'category_id' => 3,
                     'harga' => 150000,

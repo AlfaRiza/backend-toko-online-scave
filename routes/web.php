@@ -29,7 +29,10 @@ Route::middleware(['auth','role:user'])->post('/success', 'UserController@succes
 Route::middleware(['auth','role:admin'])->get('/dashboard', 'AdminController@index')->name('dashboard');
 
 Route::middleware(['auth','role:admin'])->get('/category', 'CategoryController@index')->name('category');
-Route::middleware(['auth','role:admin'])->get('/category/edit', 'CategoryController@index')->name('category-edit');
+Route::middleware(['auth','role:admin'])->get('/category/{slug}', 'CategoryController@show')->name('category-detail');
+Route::middleware(['auth','role:admin'])->put('/category/{id}', 'CategoryController@update')->name('category-update');
+Route::middleware(['auth','role:admin'])->delete('/category/{id}', 'CategoryController@destroy')->name('category-destroy');
+Route::middleware(['auth','role:admin'])->get('/category/{slug}/edit', 'CategoryController@edit')->name('category-edit');
 Route::middleware(['auth','role:admin'])->get('/category/create', 'CategoryController@create')->name('category-add');
 Route::middleware(['auth','role:admin'])->post('/category/create', 'CategoryController@store')->name('category-store');
 

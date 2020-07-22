@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Transaction;
 class Status extends Model
 {
-    protected $guard = [];
+    protected $guarded = [];
 
     public function transaction(){
         return $this->belongsTo(Transaction::class, 'status_id','id');

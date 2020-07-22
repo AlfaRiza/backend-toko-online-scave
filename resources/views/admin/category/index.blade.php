@@ -23,26 +23,37 @@
                         <th>No</th>
                         <th>Nama Kategori</th>
                         <th>Deskripsi</th>
+                        <th>Sejak</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @forelse ($categories as $category)
                     <tr>
-                        <td>1</td>
-                        <td>Kaos Oblong</td>
-                        <td>Kaos oblong terbuat dari bahan katun bambu china, nyaman dipakai, tidak panas saat terik matahari kalau di rumah aja dan tidak dingin saat hujan kalo pake jaket</td>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $category->name }}</td>
+                        <td>{{ Str::limit($category->description, 30, ' ...') }}</td>
+                        <td>{{ $category->created_at <= Carbon\Carbon::now()->subDays(1)   ? Carbon\Carbon::parse($category->created_at)->format('d-m-Y i') : Carbon\Carbon::parse($category->created_at)->diffForHumans() }}</td>
                         <td>
                             <div class="d-flex justify-content-between">
-                                <a class="btn btn-info mr-1" href="" title="Detail"><i class="fas fa-fw fa-info"></i></a>
-                                <a class="btn btn-success mr-1" href="" title="Edit"><i class="far fa-fw fa-edit"></i></a>
-                                <form action="">
-                                    <a class="btn btn-danger" href="" title="Hapus"><i class="fas fa-fw fa-trash"></i></a>
+                                <a class="btn btn-info mr-1" href="{{ route('category-detail', $category->slug) }}" title="Detail"><i class="fas fa-fw fa-info"></i></a>
+                                <a class="btn btn-success mr-1" href="{{ route('category-edit', $category->slug) }}" title="Edit"><i class="far fa-fw fa-edit"></i></a>
+                                <form action="{{ route('category-destroy', $category->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger" data-toggle="modal" data-target="#confirmModal"  title="Hapus"><i class="fas fa-fw fa-trash"></i></button>
                                 </form>
                             </div>
                         </td>
                     </tr>
+                    @empty
+                        
+                    @endforelse
                 </tbody>
             </table>
         </div>
     </div>
 @endsection
+
+@push('addon-script')
+@endpush
