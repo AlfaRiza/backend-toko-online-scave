@@ -28,15 +28,24 @@ Route::middleware(['auth','role:user'])->post('/success', 'UserController@succes
 
 Route::middleware(['auth','role:admin'])->get('/dashboard', 'AdminController@index')->name('dashboard');
 
-Route::middleware(['auth','role:admin'])->get('/category', 'CategoryController@index')->name('category');
-Route::middleware(['auth','role:admin'])->get('/category/{slug}', 'CategoryController@show')->name('category-detail');
-Route::middleware(['auth','role:admin'])->put('/category/{id}', 'CategoryController@update')->name('category-update');
-Route::middleware(['auth','role:admin'])->delete('/category/{id}', 'CategoryController@destroy')->name('category-destroy');
-Route::middleware(['auth','role:admin'])->get('/category/{slug}/edit', 'CategoryController@edit')->name('category-edit');
-Route::middleware(['auth','role:admin'])->get('/category/create', 'CategoryController@create')->name('category-add');
-Route::middleware(['auth','role:admin'])->post('/category/create', 'CategoryController@store')->name('category-store');
+Route::middleware(['auth','role:admin'])->prefix('category')->group(function(){
+    Route::get('/', 'CategoryController@index')->name('category');
+    Route::get('/create', 'CategoryController@create')->name('category-add');
+    Route::get('/{slug}', 'CategoryController@show')->name('category-detail');
+    Route::put('/{id}', 'CategoryController@update')->name('category-update');
+    Route::delete('/{id}', 'CategoryController@destroy')->name('category-destroy');
+    Route::get('/{slug}/edit', 'CategoryController@edit')->name('category-edit');
+    Route::post('/create', 'CategoryController@store')->name('category-store');
+});
+
+Route::middleware(['auth','role:admin'])->prefix('product')->group(function(){
+    Route::get('/', 'ProductController@index')->name('product');
+    Route::get('/create', 'ProductController@create')->name('product.create');
+    Route::post('/create', 'ProductController@store')->name('product.store');
+    Route::post('/create', 'ProductController@store')->name('product.store');
+});
 
 
-Route::middleware(['auth','role:admin'])->get('/product', 'ProductController@index')->name('product');
+
 Route::middleware(['auth','role:admin'])->get('/transaction', 'ProductController@index')->name('transaction');
 Route::middleware(['auth','role:admin'])->get('/setting', 'ProductController@index')->name('setting');

@@ -18,9 +18,12 @@ class CategoryController extends Controller
     }
 
     public function store(CategoryRequest $request){
-        $data = $request->all();
-        $data['slug'] = Str::slug($request->name);
-        Category::create();
+        $data = [
+            'name' => $request->name,
+            'slug' => Str::slug($request->name),
+            'description' => $request->description,
+        ];
+        Category::create($data);
         return redirect()->route('category')->with('message', 'Data Produk '.$request->name.' berhasil ditambah');
     }
 
