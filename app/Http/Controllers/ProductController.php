@@ -27,4 +27,10 @@ class ProductController extends Controller
         Product::create($data);
         return redirect()->route('product')->with('message', 'Produk '. $request->name .' berhasil ditambahkan');
     }
+
+    public function show($slug){
+        $id = Product::where('slug','=',$slug)->get('id');
+        $product = Product::with(['category'])->findOrFail($id);
+        return view('admin.product.show', ['product' => $product]);
+    }
 }
