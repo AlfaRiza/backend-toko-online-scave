@@ -47,4 +47,10 @@ class ProductController extends Controller
         Product::findOrFail($id)->update($data);
         return redirect()->route('product')->with('message', 'Produk '. $request->name .' berhasil diupdate');
     }
+
+    public function destroy($id){
+        $data = Product::findOrFail($id);
+        $data->delete();
+        return redirect()->route('product')->with('message', 'Produk berhasil dihapus');
+    }
 }
