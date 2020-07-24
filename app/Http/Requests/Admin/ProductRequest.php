@@ -24,7 +24,7 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:products,name',
+            'name' => 'required',
             'category_id' => 'required|exists:categories,id',
             'description' => 'required',
             'harga' => 'required|numeric|min:0',
@@ -36,7 +36,6 @@ class ProductRequest extends FormRequest
     {
         return [
             'name.required' => 'Nama produk harus diisi',
-            'name.unique' => 'Nama produk sudah ada, silahkan masukkan nama lain',
             'category_id.required' => 'Kategori harus diisi',
             'category_id.exist' => 'Kategori tidak ada',
             'description.required' => 'Deskripsi harus diisi',

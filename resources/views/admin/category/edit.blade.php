@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col">
-            <h1>Tambah Kategori</h1>
+            <h1>Edit Kategori</h1>
         </div>
     </div>
     <div class="row">

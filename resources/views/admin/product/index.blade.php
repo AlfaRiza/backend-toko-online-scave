@@ -43,7 +43,7 @@
                         <td>
                             <div class="d-flex justify-content-between">
                                 <a class="btn btn-info mr-1" href="{{ route('product.show', $product->slug) }}" title="Detail"><i class="fas fa-fw fa-info"></i></a>
-                                <a class="btn btn-success mr-1" href="{{ route('category-edit', $product->slug) }}" title="Edit"><i class="far fa-fw fa-edit"></i></a>
+                                <a class="btn btn-success mr-1" href="{{ route('product.edit', $product->slug) }}" title="Edit"><i class="far fa-fw fa-edit"></i></a>
                                 <form action="{{ route('category-destroy', $product->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
